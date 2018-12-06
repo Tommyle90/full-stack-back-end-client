@@ -1,30 +1,34 @@
-class MealsController < ApplicationController
-  before_action :set_meal, only: [:show, :update, :destroy]
+class MealsController < OpenReadController
+  before_action :set_meal, only: %i[show update destroy]
 
-  # GET /meals
+  # GET /examples
+  # GET /examples.json
   def index
     @meals = Meal.all
 
     render json: @meals
   end
 
-  # GET /meals/1
+  # GET /examples/1
+  # GET /examples/1.json
   def show
     render json: @meal
   end
 
-  # POST /meals
+  # POST /examples
+  # POST /examples.json
   def create
-    @meal = Meal.new(meal_params)
+    @meal = current_user.meals.build(meal_params)
 
     if @meal.save
-      render json: @meal, status: :created, location: @meal
+      render json: @meal, status: :created
     else
       render json: @meal.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /meals/1
+  # PATCH/PUT /examples/1
+  # PATCH/PUT /examples/1.json
   def update
     if @meal.update(meal_params)
       render json: @meal
@@ -33,19 +37,21 @@ class MealsController < ApplicationController
     end
   end
 
-  # DELETE /meals/1
+  # DELETE /examples/1
+  # DELETE /examples/1.json
   def destroy
     @meal.destroy
+
+    head :no_content
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meal
-      @meal = Meal.find(params[:id])
-    end
+  def set_meal
+    @meal = current_user.meals.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def meal_params
-      params.require(:meal).permit(:mealtype, :date, :description)
-    end
+  def meal_params
+    params.require(:meal).permit(:mealtype, :date, :description, :user_id)
+  end
+
+  private :set_meal, :meal_params
 end
