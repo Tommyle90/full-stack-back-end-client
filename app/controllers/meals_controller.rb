@@ -5,7 +5,7 @@ class MealsController < ProtectedController
   # GET /examples.json
   def index
     @meals = current_user.meals
-
+    # @meals = Meal.all
     render json: @meals
   end
 
