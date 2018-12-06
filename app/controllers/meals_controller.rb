@@ -1,10 +1,10 @@
-class MealsController < OpenReadController
+class MealsController < ProtectedController
   before_action :set_meal, only: %i[show update destroy]
 
   # GET /examples
   # GET /examples.json
   def index
-    @meals = Meal.all
+    @meals = current_user.meals
 
     render json: @meals
   end
