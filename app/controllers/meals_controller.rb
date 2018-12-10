@@ -4,8 +4,7 @@ class MealsController < ProtectedController
   # GET /examples
   # GET /examples.json
   def index
-    @meals = current_user.meals
-    # @meals = Meal.all
+    @meals = current_user.meals.order(date: :asc)
     render json: @meals
   end
 
