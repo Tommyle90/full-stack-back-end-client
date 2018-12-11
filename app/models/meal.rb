@@ -5,4 +5,6 @@ class Meal < ApplicationRecord
     in: %w[BREAKFAST LUNCH DINNER SNACK],
     message: '%{value} is not valid please use SNACK BREAKFAST LUNCH or DINNER'
   }
+  validates :date, inclusion: {
+    in: (Date.today-1.years..Date.today) }
 end
