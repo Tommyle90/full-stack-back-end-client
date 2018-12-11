@@ -21,7 +21,10 @@
 * Built and test user authentication on the back-end
 * Built a table of Meals with columns of mealtype, date, and description
 * Made validations so that only the current user can see their information.
+* Test out all the CRUD actions
 * Made it so that the user can only input certain criteria in the mealtype form
+* Work on CSS HTML and Javascript on front-end to see how it looks
+* Deploy
 
 
 ## ERD (entity relationship diagram)
