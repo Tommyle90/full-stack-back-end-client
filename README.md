@@ -2,7 +2,6 @@
 
 * Create a full-stack application to keep track of all the meals a user has eaten
 
----
 
 ## Technologies Used
 
@@ -12,7 +11,6 @@
 * Heroku
 * Javescript
 
----
 
 ## Thought Process & Steps
 
@@ -22,13 +20,11 @@
 * Made validations so that only the current user can see their information.
 * Made it so that the user can only input certain criteria in the mealtype form
 
----
 
 ## ERD (entity relationship diagram)
 
 ![ERD Image](https://i.imgur.com/cfPhSFa.jpg)
 
----
 
 ## Future Implementations
 
