@@ -2,6 +2,9 @@
 
 * Create a full-stack application to keep track of all the meals a user has eaten
 
+[Back-end repo](https://github.com/Tommyle90/full-stack-back-end-client)
+[Front-end repo](https://github.com/Tommyle90/full-stack-front-end-client)
+[Meal Tracker Application](https://tommyle90.github.io/full-stack-front-end-client/)
 
 ## Technologies Used
 
